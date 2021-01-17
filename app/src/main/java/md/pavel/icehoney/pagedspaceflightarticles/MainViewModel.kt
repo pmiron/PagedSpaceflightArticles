@@ -10,7 +10,11 @@ import md.pavel.icehoney.pagedspaceflightarticles.list.data.datasource.ArticleDa
 
 class MainViewModel(private val apiService: APIService) : ViewModel() {
 
-    val listData = Pager(PagingConfig(pageSize = 10)) {
+    val listData = Pager(PagingConfig(pageSize = PAGE_SIZE)) {
         ArticleDataSource(apiService)
     }.flow.cachedIn(viewModelScope)
+
+    companion object {
+        const val PAGE_SIZE = 10
+    }
 }
