@@ -2,7 +2,7 @@ package md.pavel.icehoney.pagedspaceflightarticles.list.data
 
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
-import md.pavel.icehoney.pagedspaceflightarticles.list.ApiArticle
+import md.pavel.icehoney.pagedspaceflightarticles.list.data.response.Article
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
@@ -10,8 +10,8 @@ import retrofit2.http.GET
 
 interface APIService {
 
-    @GET("/positions.json")
-    suspend fun getArticles(): Response<List<ApiArticle>>
+    @GET("/api/v2/articles")
+    suspend fun getArticles(): Response<List<Article>>
 
     companion object {
 

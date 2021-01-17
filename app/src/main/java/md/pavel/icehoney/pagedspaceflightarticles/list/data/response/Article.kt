@@ -1,6 +1,6 @@
-package md.pavel.icehoney.pagedspaceflightarticles.list
+package md.pavel.icehoney.pagedspaceflightarticles.list.data.response
 
-data class ApiArticle(
+data class Article(
     val id: String,
     val tittle: String,
     val url: String,
