@@ -14,7 +14,6 @@ interface APIService {
     suspend fun getArticles(): Response<List<Article>>
 
     companion object {
-
         private val moshi = Moshi.Builder()
             .add(KotlinJsonAdapterFactory())
             .build()

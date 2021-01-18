@@ -25,5 +25,4 @@ class ArticleDataSource(private val apiService: APIService) : PagingSource<Int, 
             return LoadResult.Error(e)
         }
     }
-
 }
