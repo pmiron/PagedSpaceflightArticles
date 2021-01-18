@@ -24,7 +24,6 @@ class MainActivity : AppCompatActivity() {
         setupView()
     }
 
-
     private fun setupView() {
         lifecycleScope.launch {
             viewModel.listData.collect {

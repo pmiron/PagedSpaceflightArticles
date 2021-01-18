@@ -10,7 +10,7 @@ import retrofit2.http.GET
 
 interface APIService {
 
-    @GET("/api/v2/articles")
+    @GET("api/v2/articles")
     suspend fun getArticles(): Response<List<Article>>
 
     companion object {
@@ -20,7 +20,7 @@ interface APIService {
             .build()
 
         fun getApiService() = Retrofit.Builder()
-            .baseUrl("https://test.spaceflightnewsapi.net")
+            .baseUrl("https://test.spaceflightnewsapi.net/")
             .addConverterFactory(MoshiConverterFactory.create(moshi))
             .build()
             .create(APIService::class.java)
