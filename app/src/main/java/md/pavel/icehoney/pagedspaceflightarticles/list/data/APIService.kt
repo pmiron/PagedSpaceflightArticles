@@ -7,11 +7,15 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Query
 
 interface APIService {
 
     @GET("api/v2/articles")
-    suspend fun getArticles(): Response<List<Article>>
+    suspend fun getArticles(
+        @Query("_start") start: Int,
+        @Query("_limit") limit: Int,
+    ): Response<List<Article>>
 
     companion object {
         private val moshi = Moshi.Builder()

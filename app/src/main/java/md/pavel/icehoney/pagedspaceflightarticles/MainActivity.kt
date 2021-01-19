@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupList() {
-        mainListAdapter = MainListAdapter()
+        mainListAdapter = MainListAdapter(this)
         recyclerView.apply {
             layoutManager = LinearLayoutManager(context)
             setHasFixedSize(true)

@@ -9,4 +9,6 @@ data class Article(
     val title: String,
     @Json(name = "summary")
     val summary: String,
+    @Json(name = "imageUrl")
+    val imageUrl: String,
 )

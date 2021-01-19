@@ -8,21 +8,34 @@ class ArticleDataSource(private val apiService: APIService) : PagingSource<Int, 
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Article> {
         try {
-            val currentLoadingPageKey = params.key ?: 1
-            val response = apiService.getArticles()
+            val currentLoadingPageKey = params.key ?: FIRST_PAGE
+            val pageSize = params.loadSize
+            val pageOffset = currentLoadingPageKey * pageSize
+
+            val response = apiService.getArticles(pageOffset, pageSize)
             val responseData = mutableListOf<Article>()
             val data = response.body() ?: emptyList()
             responseData.addAll(data)
 
-            val prevKey = if (currentLoadingPageKey == 1) null else currentLoadingPageKey - 1
+            val prevKey =
+                if (currentLoadingPageKey == FIRST_PAGE) null
+                else currentLoadingPageKey.minus(ONE_PAGE)
+            val nextKey =
+                if (data.size < params.loadSize) null
+                else currentLoadingPageKey.plus(ONE_PAGE)
 
             return LoadResult.Page(
                 data = responseData,
                 prevKey = prevKey,
-                nextKey = currentLoadingPageKey.plus(1)
+                nextKey = nextKey,
             )
         } catch (e: Exception) {
             return LoadResult.Error(e)
         }
+    }
+
+    companion object {
+        const val FIRST_PAGE = 1
+        const val ONE_PAGE = 1
     }
 }
