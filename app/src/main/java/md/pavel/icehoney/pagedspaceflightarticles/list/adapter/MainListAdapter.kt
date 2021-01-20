@@ -13,7 +13,7 @@ import md.pavel.icehoney.pagedspaceflightarticles.R
 import md.pavel.icehoney.pagedspaceflightarticles.list.data.response.Article
 
 
-class MainListAdapter(private var context: Context) :
+class MainListAdapter(private var context: Context?) :
     PagingDataAdapter<Article, MainListAdapter.ViewHolder>(DataDifferentiator) {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view)
@@ -21,7 +21,9 @@ class MainListAdapter(private var context: Context) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.itemView.textViewTitle.text = getItem(position)?.title
         holder.itemView.textViewSummary.text = getItem(position)?.summary
-        Glide.with(context).load(getItem(position)?.imageUrl).into(holder.itemView.textViewImage)
+        context?.let {
+            Glide.with(it).load(getItem(position)?.imageUrl).into(holder.itemView.textViewImage)
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
