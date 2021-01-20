@@ -1,4 +1,4 @@
-package md.pavel.icehoney.pagedspaceflightarticles.list.ui
+package md.pavel.icehoney.pagedspaceflightarticles.viewmodel.list.ui
 
 import android.os.Bundle
 import android.view.View
@@ -12,13 +12,13 @@ import kotlinx.coroutines.launch
 import md.pavel.icehoney.pagedspaceflightarticles.MainViewModel
 import md.pavel.icehoney.pagedspaceflightarticles.MainViewModelFactory
 import md.pavel.icehoney.pagedspaceflightarticles.R
-import md.pavel.icehoney.pagedspaceflightarticles.list.adapter.MainListAdapter
-import md.pavel.icehoney.pagedspaceflightarticles.list.data.APIService
+import md.pavel.icehoney.pagedspaceflightarticles.viewmodel.list.adapter.ArticlesListAdapter
+import md.pavel.icehoney.pagedspaceflightarticles.viewmodel.list.data.APIService
 
 class ListFragment : Fragment(R.layout.fragment_list) {
 
     lateinit var viewModel: MainViewModel
-    lateinit var mainListAdapter: MainListAdapter
+    lateinit var mainListAdapter: ArticlesListAdapter
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -36,7 +36,7 @@ class ListFragment : Fragment(R.layout.fragment_list) {
     }
 
     private fun setupList() {
-        mainListAdapter = MainListAdapter(context)
+        mainListAdapter = ArticlesListAdapter(context)
         recyclerView.apply {
             layoutManager = LinearLayoutManager(context)
             setHasFixedSize(true)

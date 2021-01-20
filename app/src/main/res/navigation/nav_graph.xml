@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/fragmentList"
-        android:name="md.pavel.icehoney.pagedspaceflightarticles.list.ui.ListFragment"
+        android:name="md.pavel.icehoney.pagedspaceflightarticles.viewmodel.list.ui.ListFragment"
         android:label="fragmentList"
         tools:layout="@layout/fragment_list" />
 

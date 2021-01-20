@@ -1,8 +1,8 @@
-package md.pavel.icehoney.pagedspaceflightarticles.list.data
+package md.pavel.icehoney.pagedspaceflightarticles.viewmodel.list.data
 
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
-import md.pavel.icehoney.pagedspaceflightarticles.list.data.response.Article
+import md.pavel.icehoney.pagedspaceflightarticles.viewmodel.list.data.response.Article
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
