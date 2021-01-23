@@ -1,4 +1,4 @@
-package md.pavel.icehoney.pagedspaceflightarticles.list.data.response
+package md.pavel.icehoney.pagedspaceflightarticles.viewmodel.list.data.response
 
 import com.squareup.moshi.Json
 
