@@ -1,8 +1,8 @@
-package md.pavel.icehoney.pagedspaceflightarticles.viewmodel.list.viewmodel
+package md.pavel.icehoney.pagedspaceflightarticles.viewmodel.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import md.pavel.icehoney.pagedspaceflightarticles.viewmodel.list.data.APIService
+import md.pavel.icehoney.pagedspaceflightarticles.data.APIService
 
 class MainViewModelFactory(private val apiService: APIService) : ViewModelProvider.Factory {
 

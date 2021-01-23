@@ -1,4 +1,4 @@
-package md.pavel.icehoney.pagedspaceflightarticles.viewmodel.list.adapter
+package md.pavel.icehoney.pagedspaceflightarticles.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.list_item.view.*
 import md.pavel.icehoney.pagedspaceflightarticles.R
-import md.pavel.icehoney.pagedspaceflightarticles.viewmodel.list.data.response.Article
+import md.pavel.icehoney.pagedspaceflightarticles.data.response.Article
 
 
 class ArticlesListAdapter(private var context: Context?) :

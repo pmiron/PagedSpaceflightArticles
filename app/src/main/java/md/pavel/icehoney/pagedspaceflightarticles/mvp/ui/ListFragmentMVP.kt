@@ -4,16 +4,19 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import androidx.paging.PagingData
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.fragment_list_mvp.*
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import md.pavel.icehoney.pagedspaceflightarticles.R
+import md.pavel.icehoney.pagedspaceflightarticles.adapter.ArticlesListAdapter
+import md.pavel.icehoney.pagedspaceflightarticles.data.APIService
+import md.pavel.icehoney.pagedspaceflightarticles.data.response.Article
 import md.pavel.icehoney.pagedspaceflightarticles.mvp.presenter.ListPresenterMVP
 import md.pavel.icehoney.pagedspaceflightarticles.mvp.presenter.ListPresenterMVPImp
 import md.pavel.icehoney.pagedspaceflightarticles.mvp.presenter.ListViewMVP
-import md.pavel.icehoney.pagedspaceflightarticles.viewmodel.list.adapter.ArticlesListAdapter
-import md.pavel.icehoney.pagedspaceflightarticles.viewmodel.list.data.APIService
 
 class ListFragmentMVP : Fragment(R.layout.fragment_list_mvp), ListViewMVP {
 
@@ -22,15 +25,15 @@ class ListFragmentMVP : Fragment(R.layout.fragment_list_mvp), ListViewMVP {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setupList()
         presenter = ListPresenterMVPImp(APIService.getApiService())
         presenter?.attach(this)
-        setupList()
-        setupView()
+        presenter?.getListData()
     }
 
-    private fun setupView() {
+    override fun collectFlow(flow: Flow<PagingData<Article>>) {
         lifecycleScope.launch {
-            presenter?.getListData()?.collect {
+            flow.collect {
                 mainListAdapter.submitData(it)
             }
         }
