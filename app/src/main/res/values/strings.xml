@@ -2,4 +2,5 @@
     <string name="app_name">PagedSpaceflightArticles</string>
 
     <string name="button_view_model_paging">View Model Paging</string>
+    <string name="button_mvp_paging">MVP Paging</string>
 </resources>

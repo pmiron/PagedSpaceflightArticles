@@ -13,5 +13,9 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         viewModelButton.setOnClickListener {
             findNavController().navigate(R.id.actionFragmentMainToFragmentList)
         }
+
+        mvpButton.setOnClickListener {
+            findNavController().navigate(R.id.actionFragmentMainToFragmentListMVP)
+        }
     }
 }

@@ -13,6 +13,9 @@
         <action
             android:id="@+id/actionFragmentMainToFragmentList"
             app:destination="@id/fragmentList" />
+        <action
+            android:id="@+id/actionFragmentMainToFragmentListMVP"
+            app:destination="@id/fragmentListMVP" />
     </fragment>
 
     <fragment
@@ -20,5 +23,11 @@
         android:name="md.pavel.icehoney.pagedspaceflightarticles.viewmodel.list.ui.ListFragment"
         android:label="fragmentList"
         tools:layout="@layout/fragment_list" />
+
+    <fragment
+        android:id="@+id/fragmentListMVP"
+        android:name="md.pavel.icehoney.pagedspaceflightarticles.mvp.ui.ListFragmentMVP"
+        android:label="fragmentListMVP"
+        tools:layout="@layout/fragment_list_mvp" />
 
 </navigation>

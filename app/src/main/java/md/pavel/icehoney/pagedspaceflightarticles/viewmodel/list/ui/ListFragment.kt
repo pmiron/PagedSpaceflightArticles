@@ -9,11 +9,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.fragment_list.*
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
-import md.pavel.icehoney.pagedspaceflightarticles.MainViewModel
-import md.pavel.icehoney.pagedspaceflightarticles.MainViewModelFactory
 import md.pavel.icehoney.pagedspaceflightarticles.R
 import md.pavel.icehoney.pagedspaceflightarticles.viewmodel.list.adapter.ArticlesListAdapter
 import md.pavel.icehoney.pagedspaceflightarticles.viewmodel.list.data.APIService
+import md.pavel.icehoney.pagedspaceflightarticles.viewmodel.list.viewmodel.MainViewModel
+import md.pavel.icehoney.pagedspaceflightarticles.viewmodel.list.viewmodel.MainViewModelFactory
 
 class ListFragment : Fragment(R.layout.fragment_list) {
 

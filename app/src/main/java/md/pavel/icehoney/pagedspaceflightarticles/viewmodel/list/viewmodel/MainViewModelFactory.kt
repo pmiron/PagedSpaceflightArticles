@@ -1,4 +1,4 @@
-package md.pavel.icehoney.pagedspaceflightarticles
+package md.pavel.icehoney.pagedspaceflightarticles.viewmodel.list.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
