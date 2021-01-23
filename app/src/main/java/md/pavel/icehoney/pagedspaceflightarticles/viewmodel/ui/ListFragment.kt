@@ -1,4 +1,4 @@
-package md.pavel.icehoney.pagedspaceflightarticles.viewmodel.list.ui
+package md.pavel.icehoney.pagedspaceflightarticles.viewmodel.ui
 
 import android.os.Bundle
 import android.view.View
@@ -10,10 +10,10 @@ import kotlinx.android.synthetic.main.fragment_list.*
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import md.pavel.icehoney.pagedspaceflightarticles.R
-import md.pavel.icehoney.pagedspaceflightarticles.viewmodel.list.adapter.ArticlesListAdapter
-import md.pavel.icehoney.pagedspaceflightarticles.viewmodel.list.data.APIService
-import md.pavel.icehoney.pagedspaceflightarticles.viewmodel.list.viewmodel.MainViewModel
-import md.pavel.icehoney.pagedspaceflightarticles.viewmodel.list.viewmodel.MainViewModelFactory
+import md.pavel.icehoney.pagedspaceflightarticles.adapter.ArticlesListAdapter
+import md.pavel.icehoney.pagedspaceflightarticles.data.APIService
+import md.pavel.icehoney.pagedspaceflightarticles.viewmodel.viewmodel.MainViewModel
+import md.pavel.icehoney.pagedspaceflightarticles.viewmodel.viewmodel.MainViewModelFactory
 
 class ListFragment : Fragment(R.layout.fragment_list) {
 

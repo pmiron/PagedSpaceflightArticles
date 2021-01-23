@@ -1,8 +1,8 @@
-package md.pavel.icehoney.pagedspaceflightarticles.viewmodel.list.data.datasource
+package md.pavel.icehoney.pagedspaceflightarticles.data.datasource
 
 import androidx.paging.PagingSource
-import md.pavel.icehoney.pagedspaceflightarticles.viewmodel.list.data.APIService
-import md.pavel.icehoney.pagedspaceflightarticles.viewmodel.list.data.response.Article
+import md.pavel.icehoney.pagedspaceflightarticles.data.APIService
+import md.pavel.icehoney.pagedspaceflightarticles.data.response.Article
 
 class ArticleDataSource(private val apiService: APIService) : PagingSource<Int, Article>() {
 

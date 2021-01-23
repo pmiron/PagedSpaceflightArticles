@@ -2,18 +2,15 @@ package md.pavel.icehoney.pagedspaceflightarticles.mvp.presenter
 
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
-import androidx.paging.PagingData
-import kotlinx.coroutines.flow.Flow
-import md.pavel.icehoney.pagedspaceflightarticles.viewmodel.list.data.APIService
-import md.pavel.icehoney.pagedspaceflightarticles.viewmodel.list.data.datasource.ArticleDataSource
-import md.pavel.icehoney.pagedspaceflightarticles.viewmodel.list.data.response.Article
-import md.pavel.icehoney.pagedspaceflightarticles.viewmodel.list.viewmodel.MainViewModel
+import md.pavel.icehoney.pagedspaceflightarticles.PAGE_SIZE
+import md.pavel.icehoney.pagedspaceflightarticles.data.APIService
+import md.pavel.icehoney.pagedspaceflightarticles.data.datasource.ArticleDataSource
 
 class ListPresenterMVPImp(private val apiService: APIService) : ListPresenterMVP {
 
     override var view: ListViewMVP? = null
 
-    private val innerListData = Pager(PagingConfig(pageSize = MainViewModel.PAGE_SIZE)) {
+    private val innerListData = Pager(PagingConfig(pageSize = PAGE_SIZE)) {
         ArticleDataSource(apiService)
     }
 
@@ -25,8 +22,7 @@ class ListPresenterMVPImp(private val apiService: APIService) : ListPresenterMVP
         this.view = null
     }
 
-    override fun getListData(): Flow<PagingData<Article>> {
-        return innerListData.flow
+    override fun getListData() {
+        view?.collectFlow(innerListData.flow)
     }
-
 }

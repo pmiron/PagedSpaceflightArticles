@@ -2,10 +2,11 @@ package md.pavel.icehoney.pagedspaceflightarticles.mvp.presenter
 
 import androidx.paging.PagingData
 import kotlinx.coroutines.flow.Flow
-import md.pavel.icehoney.pagedspaceflightarticles.viewmodel.list.data.response.Article
+import md.pavel.icehoney.pagedspaceflightarticles.data.response.Article
 
 interface ListViewMVP {
 
+    fun collectFlow(flow: Flow<PagingData<Article>>)
 }
 
 interface ListPresenterMVP {
@@ -16,5 +17,5 @@ interface ListPresenterMVP {
 
     fun detach()
 
-    fun getListData(): Flow<PagingData<Article>>
+    fun getListData()
 }
